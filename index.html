@@ -3,399 +3,474 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Franko | Premium Digital Services</title>
-<meta name="description" content="Franko: разработка Telegram и Discord ботов, оплата зарубежных сервисов.">
-<meta name="theme-color" content="#07070b">
-<meta property="og:title" content="Franko | Premium Digital Services">
-<meta property="og:description" content="Разработка Telegram и Discord ботов, оплата зарубежных сервисов.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%2307070b%22/%3E%3Ctext x=%2250%22 y=%2272%22 font-size=%2272%22 text-anchor=%22middle%22 fill=%22%23d4b176%22 font-family=%22Georgia,serif%22 font-weight=%22bold%22%3EF%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#050508">
+<title>FAQ | FRANKO_DEV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07070b;--ivory:#f4efe4;--muted:#8c8a9c;--gold:#d4b176;--soft:#f1e0b8;--line:rgba(255,255,255,.08);--pill:rgba(255,255,255,.13);--focus:#e8c987;--gg:linear-gradient(135deg,#f6e8c6 0%,#d4b176 55%,#b8935a 100%);--serif:"Playfair Display",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{min-height:100dvh;background:radial-gradient(900px 620px at 50% -8%,rgba(120,92,255,.17),transparent 62%),radial-gradient(700px 520px at 88% 58%,rgba(212,177,118,.07),transparent 62%),var(--bg);color:var(--ivory);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:rgba(212,177,118,.35)}
-
-/* фон */
-.bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.orb{position:absolute;width:560px;height:560px;border-radius:50%;will-change:transform}
-.orb.a{top:-220px;left:-200px;background:radial-gradient(circle,rgba(124,92,255,.22),transparent 68%);animation:drift 26s ease-in-out infinite alternate}
-.orb.b{bottom:-240px;right:-220px;background:radial-gradient(circle,rgba(212,177,118,.16),transparent 68%);animation:drift 32s ease-in-out infinite alternate-reverse}
-.grain{position:absolute;inset:0;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.glow{position:fixed;top:0;left:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;background:radial-gradient(circle,rgba(212,177,118,.11),transparent 65%);transition:opacity .4s,transform .35s ease-out}
-.bar{position:fixed;top:0;left:0;right:0;height:2px;z-index:30;background:linear-gradient(90deg,#b8935a,#f1e0b8);transform:scaleX(0);transform-origin:0 50%}
-@keyframes drift{to{transform:translate3d(60px,40px,0)}}
-@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes reveal{from{opacity:0;letter-spacing:.14em;filter:blur(14px)}to{opacity:1;letter-spacing:-.01em;filter:blur(0)}}
-@keyframes sheen{from{background-position:100% 0}to{background-position:0 0}}
-@keyframes scroll{to{transform:translateX(-50%)}}
-
-.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top,0px)) 24px calc(48px + env(safe-area-inset-bottom,0px))}
-
-/* навигация */
-.nav{position:sticky;top:calc(12px + env(safe-area-inset-top,0px));z-index:20;width:fit-content;max-width:100%;margin:0 auto 64px;display:flex;gap:2px;padding:5px;border-radius:999px;border:1px solid var(--line);background:rgba(14,14,22,.62);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 12px 40px -14px rgba(0,0,0,.8);animation:rise 1s ease .2s both}
-.nav a{position:relative;z-index:1;padding:10px 14px;border-radius:999px;color:var(--muted);font-size:13.5px;font-weight:500;text-decoration:none;transition:color .3s}
-.nav a:hover{color:var(--ivory)}
-.nav a.active{color:var(--gold)}
-.ind{position:absolute;z-index:0;top:5px;bottom:5px;left:0;width:0;border-radius:999px;background:rgba(212,177,118,.12);border:1px solid rgba(212,177,118,.32);transition:transform .45s cubic-bezier(.2,.7,.2,1),width .45s cubic-bezier(.2,.7,.2,1)}
-
-/* страницы */
-.page{display:none}
-.page.active{display:block;animation:fadeIn .55s ease both}
-.gt{background:linear-gradient(100deg,#f4efe4 0%,#f4efe4 38%,#f6e3b4 48%,#d4b176 52%,#f4efe4 62%,#f4efe4 100%);background-size:260% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-.ph{text-align:center;margin-bottom:48px}
-.ph h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px,12vw,68px);line-height:1.1;margin-bottom:16px;animation:sheen 2.4s ease-in-out .3s both}
-.ph p{font-size:13px;font-weight:500;letter-spacing:.3em;padding-left:.3em;text-transform:uppercase;color:var(--muted)}
-.hero{text-align:center}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(64px,19vw,124px);line-height:1.05;letter-spacing:-.01em;animation:reveal 1.7s cubic-bezier(.2,.7,.2,1) both,sheen 2.6s ease-in-out 1.3s both}
-.orn{display:flex;align-items:center;gap:14px;width:min(260px,70%);margin:30px auto;animation:rise 1s ease .5s both}
-.orn::before,.orn::after{content:"";flex:1;height:1px}
-.orn::before{background:linear-gradient(90deg,transparent,var(--gold))}
-.orn::after{background:linear-gradient(270deg,transparent,var(--gold))}
-.orn i,footer i{display:block;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 16px 2px rgba(212,177,118,.6)}
-.tag{font-size:13px;font-weight:500;letter-spacing:.52em;padding-left:.52em;text-transform:uppercase;color:var(--muted);animation:rise 1s ease .6s both}
-.acts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:42px;animation:rise 1s ease .8s both}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;border:1px solid var(--pill);background:rgba(255,255,255,.03);color:var(--ivory);font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s}
-.btn:hover{border-color:rgba(212,177,118,.5);background:rgba(212,177,118,.07)}
-.btn.gold{border:0;color:#19130a;background:var(--gg);box-shadow:0 16px 44px -14px rgba(212,177,118,.6),inset 0 1px 0 rgba(255,255,255,.55)}
-.btn.gold:hover{box-shadow:0 20px 54px -12px rgba(212,177,118,.8),inset 0 1px 0 rgba(255,255,255,.55)}
-
-/* бегущая строка */
-.mq{margin:72px -24px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
-.track{display:flex;width:max-content;animation:scroll 34s linear infinite}
-.mq:hover .track{animation-play-state:paused}
-.track span{display:flex;align-items:center;gap:36px;padding-right:36px;font-family:var(--serif);font-size:20px;color:#b9b6c8;white-space:nowrap}
-.track span::after{content:"";width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.7}
-
-/* карточки */
-.stack{display:grid;gap:20px}
-.services{margin-top:64px}
-.panel{position:relative;isolation:isolate;overflow:hidden;padding:34px 28px 30px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 36px 70px -36px rgba(0,0,0,.9)}
-.panel::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(212,177,118,.15),transparent 62%)}
-.panel:hover{border-color:rgba(212,177,118,.35)}
-.panel:hover::before{opacity:1}
-.head{display:flex;align-items:center;gap:18px}
-.icon{flex:none;width:58px;height:58px;display:grid;place-items:center;font-size:28px;line-height:1;border-radius:17px;background:linear-gradient(145deg,rgba(212,177,118,.2),rgba(212,177,118,.04));border:1px solid rgba(212,177,118,.3);box-shadow:0 0 34px -8px rgba(212,177,118,.55),inset 0 1px 0 rgba(255,255,255,.12)}
-.panel h2,.panel h3{font-family:var(--serif);font-weight:600;line-height:1.2}
-.panel h2{font-size:clamp(24px,6.2vw,31px)}
-.panel>p{margin-top:22px;color:var(--muted);font-size:16.5px;line-height:1.78}
-.chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
-.chips span{padding:7px 13px;border-radius:999px;font-size:13px;color:#b9b6c8;border:1px solid var(--line);background:rgba(255,255,255,.03)}
-.num{position:absolute;top:10px;right:24px;font-family:var(--serif);font-size:64px;font-weight:700;line-height:1;color:rgba(212,177,118,.13);pointer-events:none}
-.panel h3{font-size:25px;color:var(--soft);padding-right:60px}
-.cta-card{text-align:center}
-.cta-card h3{padding:0;color:var(--ivory)}
-.cta-card .btn{margin-top:26px}
-
-/* появление */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease var(--d,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
-.rv.in{opacity:1;transform:none}
-.panel.rv{transition:opacity .8s ease var(--d,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0s),border-color .35s}
-
-/* обо мне */
-.me{display:flex;gap:22px;align-items:center}
-.mono{flex:none;width:84px;height:84px;display:grid;place-items:center;border-radius:50%;font-family:var(--serif);font-size:44px;font-weight:700;color:var(--gold);border:1px solid rgba(212,177,118,.4);background:radial-gradient(circle at 30% 25%,rgba(212,177,118,.28),rgba(212,177,118,.04));box-shadow:0 0 44px -8px rgba(212,177,118,.55),inset 0 1px 0 rgba(255,255,255,.15)}
-.about{font-size:16px;line-height:1.8}
-.about span{color:var(--soft);font-weight:500}
-.prin{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px 0 8px}
-.prin span{padding:11px 18px;border-radius:999px;font-size:14px;font-weight:500;color:var(--soft);border:1px solid rgba(212,177,118,.28);background:rgba(212,177,118,.06)}
-.prin span::before{content:"✦";color:var(--gold);margin-right:9px;font-size:12px}
-.sh{margin:64px 0 28px;text-align:center;font:500 13px/1 var(--sans);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;color:var(--muted)}
-.steps{list-style:none;position:relative}
-.steps li{position:relative;display:grid;grid-template-columns:56px 1fr;gap:20px;padding-bottom:34px}
-.steps li:last-child{padding-bottom:0}
-.steps li:not(:last-child)::after{content:"";position:absolute;left:27px;top:60px;bottom:6px;width:1px;background:linear-gradient(180deg,rgba(212,177,118,.5),transparent)}
-.steps b{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;font:700 17px var(--serif);color:var(--gold);border:1px solid rgba(212,177,118,.35);background:rgba(212,177,118,.06)}
-.steps h3{font:600 19px/1.3 var(--sans);margin:4px 0 6px}
-.steps p{color:var(--muted);font-size:15px;line-height:1.65}
-.faq{border-bottom:1px solid var(--line)}
-.faq summary{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 0;cursor:pointer;list-style:none;font-size:17px;font-weight:600}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(212,177,118,.35);color:var(--gold);font-size:18px;font-weight:400;transition:transform .3s,background .3s}
-.faq[open] summary::after{transform:rotate(45deg);background:rgba(212,177,118,.1)}
-.faq p{padding:0 48px 22px 0;color:var(--muted);font-size:15px;line-height:1.7}
-.faq[open] p{animation:fadeIn .4s ease both}
-
-/* работы */
-.works .panel{padding-bottom:28px}
-.works .panel>p{margin-top:14px;font-size:15.5px;line-height:1.7}
-
-/* контакты */
-.pill{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;margin-bottom:16px;padding:21px 26px;border:1px solid var(--pill);border-radius:999px;background:rgba(255,255,255,.025);color:var(--ivory);font:500 18px/1 var(--sans);text-align:left;text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
-.pill .r{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:15px;font-weight:400}
-.pill svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
-.pill:hover{background:rgba(212,177,118,.07);border-color:rgba(212,177,118,.5);transform:translateY(-1px)}
-.pill:hover .r{color:var(--soft)}
-.pill:hover svg.go{transform:translate(2px,-2px)}
-.pill:active{transform:translateY(0)}
-.pill.cta,.pill.cta:hover{position:relative;overflow:hidden;justify-content:center;margin-top:34px;padding:27px 24px;border:0;color:#19130a;font-size:20px;font-weight:600;background:var(--gg);box-shadow:0 20px 54px -16px rgba(212,177,118,.6),inset 0 1px 0 rgba(255,255,255,.55);transform:translate(var(--tx,0px),var(--ty,0px))}
-.pill.cta::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s}
-.pill.cta:hover::after{transform:translateX(120%)}
-.hint{margin-top:18px;text-align:center;font-size:13px;color:rgba(140,138,156,.8)}
-
-footer{margin-top:72px;text-align:center;font-size:13px;letter-spacing:.1em;color:rgba(140,138,156,.75)}
-footer i{margin:0 auto 22px;opacity:.8;box-shadow:none}
-.toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));z-index:40;transform:translate(-50%,14px);padding:14px 24px;border-radius:999px;background:var(--ivory);color:var(--bg);font-size:15px;font-weight:500;white-space:nowrap;box-shadow:0 16px 40px -10px rgba(0,0,0,.7);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
-
-@media(max-width:420px){
-.wrap{padding-left:20px;padding-right:20px}
-.mq{margin-left:-20px;margin-right:-20px}
-.nav a{padding:10px 9px;font-size:12.5px}
-.tag{font-size:12px;letter-spacing:.42em;padding-left:.42em}
-.panel{padding:28px 22px 26px;border-radius:24px}
-.pill{padding:20px 22px;font-size:17px}
-.me{flex-direction:column;text-align:center}
-.faq p{padding-right:0}
+:root {
+  --bg: #050508;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --text: #f0f0f5;
+  --muted: #8a8a9e;
+  --cyan: #00FFCC;
+  --purple: #A855F7;
+  --gold: #E5C07B;
+  --line: rgba(255, 255, 255, 0.06);
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
-@media(prefers-reduced-motion:reduce){
-*,*::before,*::after{animation:none!important;transition:none!important}
-.rv{opacity:1;transform:none}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background-color: var(--bg); color: var(--text); font-family: var(--font-sans);
+  min-height: 100vh; overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 0%, rgba(0, 255, 204, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
+  background-attachment: fixed; line-height: 1.7;
 }
-</style>
-<noscript><style>.page{display:block!important}.rv{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
-<div class="bar" id="bar"></div>
-<div class="bg" aria-hidden="true"><div class="orb a"></div><div class="orb b"></div><div class="grain"></div></div>
-<div class="glow" id="glow" aria-hidden="true"></div>
+#bg-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.6; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+.shell { width: min(100% - 32px, 850px); margin: 0 auto; padding: 40px 0 60px; position: relative; z-index: 2; }
 
-<main class="wrap">
-  <nav class="nav" aria-label="Разделы">
-    <span class="ind" aria-hidden="true"></span>
-    <a href="#home" data-page="home" class="active">Главная</a>
-    <a href="#about" data-page="about">Обо мне</a>
-    <a href="#works" data-page="works">Работы</a>
-    <a href="#contacts" data-page="contacts">Контакты</a>
+.top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; }
+.brand { font-family: var(--font-mono); font-size: 14px; font-weight: bold; color: var(--text); letter-spacing: 1px; }
+.brand span { color: var(--cyan); }
+.btn-contact { 
+  font-family: var(--font-mono); font-size: 13px; font-weight: bold; padding: 10px 20px;
+  background: rgba(0, 255, 204, 0.1); color: var(--cyan); border: 1px solid var(--cyan);
+  border-radius: 8px; text-decoration: none; transition: all 0.3s; position: relative;
+  animation: borderPulse 2s infinite;
+}
+@keyframes borderPulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 255, 204, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
+}
+.btn-contact:hover { background: var(--cyan); color: var(--bg); animation: none; box-shadow: 0 0 20px rgba(0, 255, 204, 0.6); }
+
+.header { text-align: center; margin-bottom: 30px; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px;
+  color: var(--cyan); background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2);
+  padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
+}
+.status-dot { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 10px var(--cyan); animation: pulse 2s infinite; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+.header h1 { 
+  font-family: var(--font-display); font-size: clamp(50px, 10vw, 80px); 
+  color: var(--gold); margin-bottom: 15px; line-height: 1; cursor: default;
+  position: relative; display: inline-block;
+}
+.header h1:hover { animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite; }
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: 0 0 40px rgba(229, 192, 123, 0.2); }
+  20% { transform: translate(-2px, 2px); text-shadow: 2px 0 var(--cyan), -2px 0 var(--purple); }
+  40% { transform: translate(-2px, -2px); text-shadow: -2px 0 var(--cyan), 2px 0 var(--purple); }
+  60% { transform: translate(2px, 2px); text-shadow: 2px 0 var(--cyan), -2px 0 var(--purple); }
+  80% { transform: translate(2px, -2px); text-shadow: -2px 0 var(--cyan), 2px 0 var(--purple); }
+  100% { transform: translate(0); text-shadow: 0 0 40px rgba(229, 192, 123, 0.2); }
+}
+.header p { color: var(--muted); font-family: var(--font-mono); font-size: 15px; max-width: 500px; margin: 0 auto; }
+
+.marquee-wrap {
+  width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+  overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 12px 0; margin-bottom: 40px; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px);
+  display: flex;
+}
+.marquee-content {
+  display: flex; white-space: nowrap; animation: scrollLeft 25s linear infinite;
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+}
+.marquee-content span { margin: 0 20px; display: flex; align-items: center; gap: 10px; }
+.marquee-content span::after { content: "✦"; color: var(--cyan); font-size: 10px; }
+@keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.controls { margin-bottom: 40px; display: flex; flex-direction: column; gap: 20px; }
+.search-wrap { position: relative; }
+.search-wrap input {
+  width: 100%; padding: 18px 20px 18px 55px; font-size: 16px;
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px;
+  color: var(--text); font-family: var(--font-sans); outline: none; transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2); backdrop-filter: blur(10px);
+}
+.search-wrap input:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0, 255, 204, 0.1), 0 10px 30px rgba(0, 255, 204, 0.15); background: rgba(0, 255, 204, 0.03); }
+.search-wrap svg { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; fill: var(--muted); pointer-events: none; transition: fill 0.3s; }
+.search-wrap input:focus + svg { fill: var(--cyan); }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.filter-btn {
+  font-family: var(--font-mono); font-size: 13px; padding: 9px 18px;
+  background: var(--bg-card); color: var(--muted); border: 1px solid var(--line);
+  border-radius: 8px; cursor: pointer; transition: all 0.3s; backdrop-filter: blur(10px);
+}
+.filter-btn:hover { border-color: var(--purple); color: var(--text); transform: translateY(-2px); }
+.filter-btn.active { background: var(--purple); color: #fff; border-color: var(--purple); font-weight: bold; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); }
+
+.faq-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 60px; }
+.faq-item {
+  position: relative; background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 14px; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, opacity 0.3s;
+  opacity: 0; transform: translateY(20px);
+}
+.faq-item.visible { opacity: 1; transform: translateY(0); }
+.faq-item::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 255, 204, 0.08), transparent 40%);
+  z-index: 1;
+}
+.faq-item:hover::before { opacity: 1; }
+.faq-item:hover { border-color: rgba(0, 255, 204, 0.3); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+.faq-item.open { border-color: var(--cyan); box-shadow: 0 0 30px rgba(0, 255, 204, 0.1); }
+.faq-q {
+  position: relative; z-index: 2; padding: 22px 26px; display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; font-weight: 600; font-size: 17px; user-select: none; gap: 20px; transition: color 0.3s;
+}
+.faq-item.open .faq-q { color: var(--cyan); }
+.faq-q .icon {
+  width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid var(--line); color: var(--muted);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex-shrink: 0; font-size: 20px; font-weight: 400;
+}
+.faq-item.open .faq-q .icon { transform: rotate(135deg); color: var(--cyan); border-color: var(--cyan); background: rgba(0, 255, 204, 0.1); }
+.faq-a { position: relative; z-index: 2; padding: 0 26px 24px; color: var(--muted); font-size: 15px; display: none; animation: fadeIn 0.4s ease; }
+.faq-item.open .faq-a { display: block; }
+.faq-a a { color: var(--cyan); text-decoration: none; border-bottom: 1px dashed rgba(0, 255, 204, 0.4); transition: all 0.2s; font-weight: 600; }
+.faq-a a:hover { color: #fff; border-bottom-style: solid; text-shadow: 0 0 10px rgba(0,255,204,0.5); }
+.faq-a p { margin-bottom: 12px; }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-a ul { margin-left: 24px; margin-bottom: 12px; }
+.faq-a li { margin-bottom: 8px; }
+.faq-a strong { color: var(--text); font-weight: 600; }
+.faq-a code { font-family: var(--font-mono); background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: var(--gold); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+.empty { text-align: center; padding: 50px 20px; color: var(--muted); font-family: var(--font-mono); font-size: 15px; display: none; }
+.empty::before { content: "🔍"; display: block; font-size: 40px; margin-bottom: 15px; opacity: 0.5; }
+
+.scroll-top {
+  position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+  background: var(--bg-card); border: 1px solid var(--cyan); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: var(--cyan);
+  cursor: pointer; z-index: 99; opacity: 0; pointer-events: none; transition: all 0.3s;
+  backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+}
+.scroll-top.show { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { background: var(--cyan); color: var(--bg); transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 255, 204, 0.5); }
+.scroll-top svg { width: 24px; height: 24px; fill: currentColor; }
+footer { text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--muted); padding-top: 25px; border-top: 1px solid var(--line); text-transform: uppercase; letter-spacing: 1.5px; }
+
+@media (max-width: 768px) {
+  .shell { width: 100%; padding: 20px 16px 40px; }
+  .top-nav { margin-bottom: 30px; }
+  .btn-contact { padding: 8px 14px; font-size: 12px; animation: none; }
+  .header h1 { font-size: 50px; }
+  .header p { font-size: 13px; }
+  .marquee-content { font-size: 11px; }
+  .marquee-content span { margin: 0 15px; }
+  .search-wrap input { padding: 15px 15px 15px 45px; font-size: 15px; }
+  .search-wrap svg { left: 15px; width: 18px; height: 18px; }
+  .filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 5px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter-btn { padding: 8px 14px; font-size: 12px; white-space: nowrap; }
+  .faq-q { padding: 18px 20px; font-size: 15px; }
+  .faq-q .icon { width: 24px; height: 24px; font-size: 18px; }
+  .faq-a { padding: 0 20px 20px; font-size: 14px; }
+  .faq-a ul { margin-left: 20px; }
+  .faq-item::before { display: none; }
+  .faq-item:hover { border-color: var(--line); box-shadow: none; }
+  .filter-btn:hover { transform: none; }
+  .scroll-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+  .scroll-top svg { width: 20px; height: 20px; }
+}
+</style><body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="shell">
+  <nav class="top-nav">
+    <div class="brand">FRANKO<span>_DEV</span></div>
+    <a href="https://t.me/kiduma" target="_blank" class="btn-contact">Написать мне ↗</a>
   </nav>
 
-  <!-- ГЛАВНАЯ -->
-  <section class="page active" id="home">
-    <header class="hero">
-      <h1 class="gt">Franko</h1>
-      <div class="orn" aria-hidden="true"><i></i></div>
-      <p class="tag">Digital Services</p>
-      <div class="acts">
-        <a class="btn gold" href="https://t.me/kiduma" target="_blank" rel="noopener">Написать в Telegram</a>
-        <button class="btn" type="button" data-go="works">Смотреть работы</button>
-      </div>
-    </header>
-
-    <div class="mq" aria-hidden="true"><div class="track">
-      <span>Telegram боты</span><span>Discord боты</span><span>RP-системы</span><span>Базы данных</span><span>Steam</span><span>Подписки</span><span>Зарубежные сервисы</span>
-    </div></div>
-
-    <section class="stack services" data-stagger aria-label="Услуги">
-      <article class="panel rv">
-        <div class="head"><span class="icon" aria-hidden="true">🤖</span><h2>Разработка ботов</h2></div>
-        <p>Создание Telegram и Discord ботов любой сложности. От простых утилит до полноценных RP-систем с базой данных.</p>
-        <div class="chips"><span>Telegram</span><span>Discord</span><span>RP-системы</span><span>База данных</span></div>
-      </article>
-      <article class="panel rv">
-        <div class="head"><span class="icon" aria-hidden="true">💳</span><h2>Оплата зарубежных сервисов</h2></div>
-        <p>Помощь с покупками и оформлением подписок в Steam, Discord, а также любых других зарубежных сервисах.</p>
-        <div class="chips"><span>Steam</span><span>Discord</span><span>Подписки</span><span>Любые сервисы</span></div>
-      </article>
-    </section>
-  </section>
-
-  <!-- ОБО МНЕ -->
-  <section class="page" id="about">
-    <header class="ph"><h1 class="gt">About Me</h1><p>Кто я и как работаю</p></header>
-
-    <article class="panel me rv">
-      <div class="mono" aria-hidden="true">F</div>
-      <div class="about">Привет! Меня зовут <span>Franko</span>, и я специализируюсь на создании цифровых продуктов. Мой подход — это <span>качество, скорость и конфиденциальность</span>. Я не просто пишу код, я решаю твою задачу так, чтобы результат работал как швейцарские часы.</div>
-    </article>
-
-    <div class="prin rv"><span>Качество</span><span>Скорость</span><span>Конфиденциальность</span></div>
-
-    <h2 class="sh">Как это работает</h2>
-    <ol class="steps" data-stagger>
-      <li class="rv"><b>01</b><div><h3>Пишешь задачу</h3><p>Пишешь мне в Telegram и описываешь, что нужно сделать.</p></div></li>
-      <li class="rv"><b>02</b><div><h3>Согласуем детали</h3><p>Обсуждаем задачу и сроки, чтобы всё было понятно заранее.</p></div></li>
-      <li class="rv"><b>03</b><div><h3>Делаю, ты проверяешь</h3><p>Я делаю, ты проверяешь. Всё прозрачно.</p></div></li>
-    </ol>
-
-    <h2 class="sh">Частые вопросы</h2>
-    <div data-stagger>
-      <details class="faq rv" name="faq"><summary>Какие сроки?</summary><p>Простые боты — от 1 до 3 дней. Сложные системы с базой данных — от 4 до 7 дней. Всё зависит от объёма.</p></details>
-      <details class="faq rv" name="faq"><summary>А если что-то сломается?</summary><p>Я всегда на связи после сдачи проекта. Оказываю поддержку и помогаю с настройкой на сервере клиента.</p></details>
-      <details class="faq rv" name="faq"><summary>Как происходит оплата?</summary><p>Работаю по предоплате 50% или полностью по факту сдачи (для проверенных клиентов).</p></details>
+  <header class="header">
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Доступен для заказов
     </div>
-  </section>
+    <h1>FAQ</h1>
+    <p>Ответы на частые вопросы о разработке ботов и веб-приложений</p>
+  </header>
 
-  <!-- РАБОТЫ -->
-  <section class="page" id="works">
-    <header class="ph"><h1 class="gt">Works</h1><p>Мои последние проекты</p></header>
-    <div class="stack works" data-stagger>
-      <article class="panel rv"><span class="num" aria-hidden="true">01</span>
-        <h3>Discord RP Бот</h3>
-        <p>Многофункциональный бот с системой заявок, тикетов, логами и модерацией. Реализована база данных для хранения конфигураций.</p>
-        <div class="chips"><span>Python</span><span>Discord.py</span><span>SQLite</span></div>
-      </article>
-      <article class="panel rv"><span class="num" aria-hidden="true">02</span>
-        <h3>Telegram Shop Бот</h3>
-        <p>Магазин с автовыдачей товаров, интеграцией платёжных систем и системой промокодов для скидок.</p>
-        <div class="chips"><span>Aiogram</span><span>PostgreSQL</span></div>
-      </article>
-      <article class="panel rv"><span class="num" aria-hidden="true">03</span>
-        <h3>Сайт-визитка</h3>
-        <p>Премиальный одностраничный сайт для оказания услуг. Адаптивный дизайн, анимации и защита контента.</p>
-        <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
-      </article>
-      <article class="panel cta-card rv">
-        <h3>Есть задача?</h3>
-        <p>Расскажи, что нужно сделать, и мы всё обсудим.</p>
-        <a class="btn gold" href="https://t.me/kiduma" target="_blank" rel="noopener">Написать в Telegram</a>
-      </article>
+  <div class="marquee-wrap">
+    <div class="marquee-content" id="marquee">
+      <span>Python</span><span>JavaScript</span><span>Java</span><span>Lua</span>
+      <span>HTML / CSS</span><span>Telegram Bots</span><span>Discord Bots</span><span>Web Apps</span>
+      <span>FastAPI</span><span>Flask</span><span>SQLite / PostgreSQL</span>
     </div>
-  </section>
+  </div>
 
-  <!-- КОНТАКТЫ -->
-  <section class="page" id="contacts">
-    <header class="ph"><h1 class="gt">Contact</h1><p>Готов к сотрудничеству</p></header>
-    <div data-stagger>
-      <a class="pill rv" href="https://t.me/kiduma" target="_blank" rel="noopener"><span>Telegram</span><span class="r">@kiduma<svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-      <button class="pill rv" id="discord" type="button" aria-label="Скопировать Discord t8x9o"><span>Discord</span><span class="r">@t8x9o<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg></span></button>
-      <a class="pill rv" href="https://www.tiktok.com/@dxbxckwood" target="_blank" rel="noopener"><span>TikTok</span><span class="r">@dxbxckwood<svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+  <div class="controls">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Поиск по вопросам...">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </div>
-    <a class="pill cta" href="https://t.me/kiduma" target="_blank" rel="noopener">Написать в Telegram</a>
-    <p class="hint">Нажми на Discord, чтобы скопировать ник</p>
-  </section>
+    <div class="filters" id="filters"></div>
+  </div>
 
-  <footer><i aria-hidden="true"></i>© 2026 Franko. All rights reserved.</footer>
-</main>
+  <div class="faq-list" id="faqList"></div>
+  <div class="empty" id="emptyState">Ничего не найдено. Попробуй изменить запрос.</div>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer>
+    <span>© 2026 FRANKO_DEV | Все права защищены</span>
+  </footer>
+</div>
 
-<script>
-(function () {
-  var $ = function (s) { return document.querySelector(s); };
-  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
-  var fine = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
-  var calm = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
-
-  // бегущая строка: дублируем содержимое для бесшовной петли
-  var tr = $(".track");
-  tr.insertAdjacentHTML("beforeend", tr.innerHTML);
-
-  // роутер по якорям
-  var ids = ["home", "about", "works", "contacts"];
-  var titles = { home: "Franko | Premium Digital Services", about: "Обо мне | Franko", works: "Работы | Franko", contacts: "Контакты | Franko" };
-  var links = $$(".nav a"), pages = $$(".page"), ind = $(".ind");
-
-  function place() {
-    var a = $(".nav a.active");
-    if (!a) return;
-    ind.style.width = a.offsetWidth + "px";
-    ind.style.transform = "translateX(" + a.offsetLeft + "px)";
+<div class="scroll-top" id="scrollTop">
+  <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+</div>
+</head><script>
+const faqData = [
+  {
+    category: "Обо мне", q: "Кто я такой и чем занимаюсь?",
+    a: `<p>Я — <strong>Fullstack-разработчик</strong> с опытом работы на <strong>Python, JavaScript, Java, Lua, HTML, CSS</strong> и других языках. Моя специализация — создание ботов и веб-приложений.</p><p>Я разрабатываю <strong>абсолютно любых ботов</strong> под любые пожелания:</p><ul><li>Развлекательные интерактивные боты для комьюнити (игры, экономика, модерация).</li><li>Масштабные проекты со своей базой данных, веб-панелью и сложной архитектурой.</li><li>Интеграция с API, платежными системами и сторонними сервисами.</li></ul><p>Помимо ботов занимаюсь версткой и программированием интерфейсов. Всегда пишу чистый код и делаю упор на стабильность работы.</p>`
+  },
+  {
+    category: "Обо мне", q: "Почему стоит заказать именно у меня?",
+    a: `<p>Я предлагаю не просто «написание кода», а полноценный подход к решению вашей задачи:</p><ul><li><strong>Чистый и оптимизированный код:</strong> без костылей, с комментариями и понятной структурой.</li><li><strong>Соблюдение дедлайнов:</strong> я всегда называю реальные сроки и сдаю работу вовремя.</li><li><strong>Поддержка после сдачи:</strong> вы не останетесь один на один с багами.</li><li><strong>Индивидуальный подход:</strong> предлагаю решения, которые подходят именно под ваш бюджет и задачи.</li></ul>`
+  },
+  {
+    category: "Связь", q: "Как со мной связаться?",
+    a: `<p>Вы всегда можете написать мне в удобной соцсети. Я оперативно отвечаю на все заявки:</p><ul><li><strong>Discord:</strong> <a href="https://discord.com/users/t8x9o" target="_blank">@t8x9o</a></li><li><strong>Telegram:</strong> <a href="https://t.me/kiduma" target="_blank">@kiduma</a></li><li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@dxbxckwood" target="_blank">@dxbxckwood</a></li></ul><p>Для заказа пишите сразу в Telegram или Discord, прикладывая краткое описание задачи.</p>`
+  },
+  {
+    category: "Услуги и Цены", q: "Какие стоимости на ботов (ТГ / ДС / ВК)?",
+    a: `<p>Стоимость разработки зависит от сложности функционала, объема работы и сроков. Цена формируется индивидуально.</p><ul><li><strong>Минимальная стоимость:</strong> от 50 ₽ (простые боты с базовым функционалом).</li><li><strong>Максимальная стоимость:</strong> до 3000 ₽ / 31$ (сложные системы с базами данных, панелями управления, интеграциями).</li></ul><p>Точная цена озвучивается после обсуждения ТЗ (технического задания).</p>`
+  },
+  {
+    category: "Услуги и Цены", q: "Какие способы оплаты ты принимаешь?",
+    a: `<p>Я стараюсь подстраиваться под клиента, поэтому принимаю оплату в разных валютах и форматах:</p><ul><li><strong>Криптовалюта</strong> (USDT, BTC, TON и др.)</li><li><strong>Доллары (USD)</strong></li><li><strong>Рубли (RUB)</strong></li><li><strong>Telegram Stars</strong> (комиссия +1%)</li><li><strong>Скины в Steam</strong> (комиссия +10%)</li></ul><p>Оплата производится по схеме: 50% предоплата, 50% после сдачи проекта.</p>`
+  },
+  {
+    category: "Услуги и Цены", q: "Какие сроки разработки?",
+    a: `<p>Сроки напрямую зависят от масштаба проекта:</p><ul><li>Простые боты (модерация, приветствия): <strong>1–3 дня</strong>.</li><li>Боты с кастомной логикой и базами данных: <strong>от 1 до 2 недель</strong>.</li><li>Масштабные проекты с веб-панелью: <strong>от 2-3 недель</strong>.</li></ul><p>При заказе мы фиксируем дедлайн, и я всегда стараюсь сдавать проекты раньше срока.</p>`
+  },
+  {
+    category: "Разработка", q: "Как проходит процесс работы?",
+    a: `<p>Чтобы вам было спокойно, весь процесс прозрачен и разбит на этапы:</p><ul><li><strong>1. Обсуждение:</strong> вы описываете идею, мы формируем четкое ТЗ.</li><li><strong>2. Оценка:</strong> я называю точную стоимость и сроки.</li><li><strong>3. Предоплата 50%:</strong> я приступаю к работе.</li><li><strong>4. Разработка и тесты:</strong> я показываю промежуточные результаты (если проект большой).</li><li><strong>5. Сдача проекта:</strong> демонстрация готового бота, оплата остатка. Настройка хостинга и передача исходников.</li></ul>`
+  },
+  {
+    category: "Разработка", q: "Что нужно для старта (заказа бота)?",
+    a: `<p>Чтобы я мог оценить вашу задачу и сказать точную цену, пришлите мне:</p><ul><li>Краткое описание того, что должен делать бот.</li><li>Список функций и команд (можно просто тезисами).</li><li>Примерный бюджет или сроки (если есть).</li><li>Референсы (ссылки на ботов, которые вам нравятся).</li></ul><p>Если у вас нет готового ТЗ — не страшно. Мы обсудим детали вместе, и я помогу составить грамотное задание.</p>`
+  },
+  {
+    category: "Разработка", q: "На каких языках ты пишешь ботов?",
+    a: `<p>В основном я использую:</p><ul><li><strong>Python</strong> (aiogram, discord.py, vkbottle) — для надежных и масштабируемых ботов.</li><li><strong>JavaScript / Node.js</strong> (discord.js, telegraf) — для быстрой и асинхронной разработки.</li><li><strong>Java / Lua</strong> — для специфических задач и интеграций.</li></ul><p>Для баз данных использую SQLite, PostgreSQL или MongoDB. Для веб-панелей — FastAPI, Flask или Node.js.</p>`
+  },
+  {
+    category: "Разработка", q: "Где будут хоститься боты?",
+    a: `<p>Бот будет размещен там, где вам будет удобнее.</p><p>Я могу помочь с выбором и настройкой:</p><ul><li><strong>Railway, Render</strong> — отлично для старта, быстро и дешево.</li><li><strong>VPS / Выделенный сервер</strong> — для стабильности 24/7 и сложных баз данных.</li></ul><p>Я помогу настроить сервер, прикрутить домен и обеспечить бесперебойную работу (через systemd или Docker).</p>`
+  },
+  {
+    category: "Правила", q: "Что входит в поддержку после сдачи проекта?",
+    a: `<p>После сдачи проекта я предоставляю <strong>бесплатную поддержку в течение 7 дней</strong>.</p><p>В неё входит:</p><ul><li>Исправление багов, связанных с моим кодом.</li><li>Помощь с первоначальной настройкой и запуском.</li><li>Краткий инструктаж по использованию.</li></ul><p>Дальнейшее обновление и добавление нового функционала оплачивается отдельно по договоренности.</p>`
   }
-  function go(id, push) {
-    if (ids.indexOf(id) < 0) id = "home";
-    pages.forEach(function (p) { p.classList.toggle("active", p.id === id); });
-    links.forEach(function (a) {
-      var on = a.dataset.page === id;
-      a.classList.toggle("active", on);
-      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
-    });
-    document.title = titles[id];
-    place();
-    try { window.scrollTo({ top: 0, behavior: "instant" }); } catch (e) { window.scrollTo(0, 0); }
-    if (push) { try { history.pushState(null, "", "#" + id); } catch (e) {} }
-  }
-  links.forEach(function (a) {
-    a.addEventListener("click", function (e) { e.preventDefault(); go(a.dataset.page, true); });
-  });
-  $$("[data-go]").forEach(function (b) {
-    b.addEventListener("click", function () { go(b.dataset.go, true); });
-  });
-  window.addEventListener("popstate", function () { go(location.hash.slice(1)); });
-  window.addEventListener("resize", place);
-  go(location.hash.slice(1) || "home");
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+];
 
-  // плавное появление блоков
-  $$("[data-stagger]").forEach(function (g) {
-    Array.prototype.forEach.call(g.children, function (el, i) { el.style.setProperty("--d", i * 90 + "ms"); });
-  });
-  var io = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-  }, { threshold: 0.12 }) : null;
-  $$(".rv").forEach(function (el) { if (io) io.observe(el); else el.classList.add("in"); });
+let currentCategory = "Все";
+const searchInput = document.getElementById('searchInput');
+const faqList = document.getElementById('faqList');
+const filtersContainer = document.getElementById('filters');
+const emptyState = document.getElementById('emptyState');
+const scrollTopBtn = document.getElementById('scrollTop');
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-  // прогресс прокрутки
-  var bar = $("#bar"), ticking = false;
-  function prog() {
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(window.scrollY / h, 1) : 0) + ")";
-    ticking = false;
-  }
-  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(prog); } }, { passive: true });
+const marquee = document.getElementById('marquee');
+marquee.innerHTML += marquee.innerHTML;
 
-  // подсветка карточек и свет за курсором
-  $$(".panel").forEach(function (p) {
-    p.addEventListener("pointermove", function (e) {
-      var r = p.getBoundingClientRect();
-      p.style.setProperty("--mx", e.clientX - r.left + "px");
-      p.style.setProperty("--my", e.clientY - r.top + "px");
-    });
-  });
-  if (fine && !calm) {
-    var glow = $("#glow");
-    window.addEventListener("pointermove", function (e) {
-      glow.style.opacity = 1;
-      glow.style.transform = "translate3d(" + e.clientX + "px," + e.clientY + "px,0)";
-    }, { passive: true });
-    document.addEventListener("mouseleave", function () { glow.style.opacity = 0; });
+const categories = ["Все", ...new Set(faqData.map(item => item.category))];
+categories.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.className = `filter-btn ${cat === 'Все' ? 'active' : ''}`;
+  btn.textContent = cat;
+  btn.onclick = () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCategory = cat;
+    renderFaq();
+  };
+  filtersContainer.appendChild(btn);
+});
 
-    // «магнитная» кнопка
-    var cta = $(".pill.cta");
-    cta.addEventListener("pointermove", function (e) {
-      var r = cta.getBoundingClientRect();
-      cta.style.setProperty("--tx", (e.clientX - r.left - r.width / 2) * 0.06 + "px");
-      cta.style.setProperty("--ty", (e.clientY - r.top - r.height / 2) * 0.18 + "px");
-    });
-    cta.addEventListener("pointerleave", function () {
-      cta.style.setProperty("--tx", "0px");
-      cta.style.setProperty("--ty", "0px");
-    });
-  }
+function renderFaq() {
+  const query = searchInput.value.toLowerCase().trim();
+  faqList.innerHTML = '';
+  let found = 0;
 
-  // копирование Discord
-  var toast = $("#toast"), timer;
-  $("#discord").addEventListener("click", function () {
-    var name = "t8x9o";
-    function show(ok) {
-      toast.textContent = ok ? "Discord @" + name + " скопирован" : "Мой Discord: @" + name;
-      toast.classList.add("show");
-      clearTimeout(timer);
-      timer = setTimeout(function () { toast.classList.remove("show"); }, 2400);
+  faqData.forEach((item) => {
+    const matchCategory = currentCategory === "Все" || item.category === currentCategory;
+    const matchQuery = item.q.toLowerCase().includes(query) || item.a.toLowerCase().includes(query);
+
+    if (matchCategory && matchQuery) {
+      found++;
+      const div = document.createElement('div');
+      div.className = 'faq-item';
+      if (query.length > 1) div.classList.add('open');
+
+      div.innerHTML = `
+        <div class="faq-q">
+          <span>${item.q}</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-a">${item.a}</div>
+      `;
+
+      const qBlock = div.querySelector('.faq-q');
+      qBlock.onclick = () => {
+        const isOpen = div.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+        if (!isOpen) div.classList.add('open');
+      };
+
+      if (!isMobile) {
+        div.addEventListener('mousemove', e => {
+          const rect = div.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          div.style.setProperty('--mouse-x', `${x}px`);
+          div.style.setProperty('--mouse-y', `${y}px`);
+        });
+      }
+
+      faqList.appendChild(div);
     }
-    function fallback() {
-      var ok = false;
-      try {
-        var ta = document.createElement("textarea");
-        ta.value = name;
-        ta.style.cssText = "position:fixed;opacity:0";
-        document.body.appendChild(ta);
-        ta.select();
-        ok = document.execCommand("copy");
-        ta.remove();
-      } catch (e) {}
-      show(ok);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(name).then(function () { show(true); }, fallback);
-    } else { fallback(); }
   });
-})();
+
+  emptyState.style.display = found === 0 ? 'block' : 'none';
+  setTimeout(observeElements, 50);
+}
+
+function observeElements() {
+  const items = document.querySelectorAll('.faq-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 50);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  items.forEach(item => observer.observe(item));
+}
+
+searchInput.addEventListener('input', renderFaq);
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) scrollTopBtn.classList.add('show');
+  else scrollTopBtn.classList.remove('show');
+});
+scrollTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// --- ЛЕТАЮЩИЕ 3D-ФИГУРЫ НА ФОНЕ ---
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let width, height;
+let shapes = [];
+const shapeCount = window.innerWidth < 768 ? 15 : 40;
+const mouse = { x: -1000, y: -1000, radius: 150 };
+
+function resize() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+window.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+resize();
+
+class Shape {
+  constructor() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    this.size = Math.random() * 20 + 10;
+    this.rotation = Math.random() * Math.PI * 2;
+    this.rotSpeed = (Math.random() - 0.5) * 0.02;
+    this.type = Math.floor(Math.random() * 3);
+    this.color = Math.random() > 0.5 ? '0, 255, 204' : '229, 192, 123';
+    this.alpha = Math.random() * 0.4 + 0.1;
+  }
+  
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.rotation += this.rotSpeed;
+
+    const dx = mouse.x - this.x;
+    const dy = mouse.y - this.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    
+    if (dist < mouse.radius) {
+      const force = (mouse.radius - dist) / mouse.radius;
+      this.x -= (dx / dist) * force * 5;
+      this.y -= (dy / dist) * force * 5;
+    }
+
+    if (this.x < -this.size) this.x = width + this.size;
+    if (this.x > width + this.size) this.x = -this.size;
+    if (this.y < -this.size) this.y = height + this.size;
+    if (this.y > height + this.size) this.y = -this.size;
+  }
+  
+  draw() {
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotation);
+    ctx.beginPath();
+    
+    const s = this.size;
+    if (this.type === 0) { 
+      ctx.moveTo(0, -s); ctx.lineTo(s, s); ctx.lineTo(-s, s);
+    } else if (this.type === 1) { 
+      ctx.rect(-s, -s, s * 2, s * 2);
+    } else { 
+      ctx.moveTo(0, -s); ctx.lineTo(s, 0); ctx.lineTo(0, s); ctx.lineTo(-s, 0);
+    }
+    
+    ctx.closePath();
+    ctx.strokeStyle = `rgba(${this.color}, ${this.alpha})`;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.fillStyle = `rgba(${this.color}, ${this.alpha * 0.15})`;
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+for (let i = 0; i < shapeCount; i++) shapes.push(new Shape());
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+  shapes.forEach(shape => {
+    shape.update();
+    shape.draw();
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+
+renderFaq();
 </script>
 </body>
 </html>
